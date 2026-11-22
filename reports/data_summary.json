@@ -1,0 +1,55 @@
+{
+  "phase": "01_data_and_point_in_time",
+  "seed": 2026,
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "orders": 24000,
+  "events": 1936,
+  "label_window_days": 7,
+  "label_delay_hours": 1,
+  "point_in_time_future_events_used": 0,
+  "mean_delivery_hours": 42.11376890618595,
+  "split_readiness": {
+    "train": {
+      "period_start": "2026-01-01T00:00:00Z",
+      "period_end": "2026-02-01T00:00:00Z",
+      "snapshot_as_of": "2026-02-01T00:00:00Z",
+      "orders_total": 12000,
+      "labels_ready": 9259,
+      "labels_immature": 2741
+    },
+    "valid": {
+      "period_start": "2026-02-01T00:00:00Z",
+      "period_end": "2026-03-01T00:00:00Z",
+      "snapshot_as_of": "2026-03-01T00:00:00Z",
+      "orders_total": 4000,
+      "labels_ready": 2990,
+      "labels_immature": 1010
+    },
+    "test": {
+      "period_start": "2026-03-01T00:00:00Z",
+      "period_end": "2026-04-01T00:00:00Z",
+      "snapshot_as_of": "2026-04-01T00:00:00Z",
+      "orders_total": 4000,
+      "labels_ready": 3092,
+      "labels_immature": 908
+    },
+    "replay": {
+      "period_start": "2026-04-01T00:00:00Z",
+      "period_end": "2026-05-01T00:00:00Z",
+      "snapshot_as_of": "2026-05-01T00:00:00Z",
+      "orders_total": 4000,
+      "labels_ready": 3057,
+      "labels_immature": 943
+    }
+  },
+  "sha256": {
+    "orders": "d6b7cbfd437b74c22c02662232147e78a948a2bf659fb7b870a7296c771a9c14",
+    "events": "9bb5652f141e163147395b72efe7b8ec2f8c7a87a516b166a182c655f6d30d90",
+    "features": "73cf7c7ce8d7ac53962de2d11099bc703d8539a3ff424bf225c0f98d8515c074"
+  },
+  "code_sha256": "a7655a2e4b766285fba08d62f8c5073d53b4329feccdb458837da96dbd68b7b6"
+}

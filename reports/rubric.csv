@@ -1,0 +1,10 @@
+criterion,maximum_points,evidence_paths,verified_scope
+Данные и время,15,data/generate.py; src/features.py; src/splits.py; tests/test_point_in_time.py; reports/data_summary.json,"контракт, PIT, зрелые метки, тесты"
+Лестница моделей,10,src/train.py; reports/training_metrics.json,"median, Ridge, HistGradientBoosting; валидационный выбор"
+Воспроизводимость,10,scripts/run_all.sh; src/pipeline.py; requirements.txt; configs/; reports/reproducibility.json,"одна команда, версии, конфигурации, SHA-256, изоляция обновления"
+Офлайн-оценка,15,src/evaluate.py; reports/evaluation_metrics.json; reports/evaluation_slices.csv,"MAE, интервалы, срезы, бутстрэп по дням, зрелые исходы"
+Сервис и тесты,15,src/service.py; src/feature_store.py; tests/test_service.py; scripts/check_service.sh,"FastAPI, PIT-паритет, timeout, ошибка контракта, резерв"
+Оптимизация,10,src/fast_predict.py; src/benchmark.py; reports/performance.json; reports/latency_raw.csv,"реальный HTTP, прогрев, 20/40 rps, точность до/после"
+Выпуск и откат,10,src/rollout.py; src/replay.py; reports/rollout_events.jsonl; reports/rollout_windows.csv,"shadow, sticky canary, hold, rollback, HTTP-восстановление"
+Мониторинг,10,src/monitor.py; reports/monitor_daily.csv; reports/monitor_cohorts.csv; reports/monitor_alerts.jsonl,"DQA, PSI/KS/chi-square, зрелые когорты"
+Переобучение,5,src/retrain.py; retraining/full_run/decisions/; retraining/full_run/registry.json,"новые зрелые метки, отдельный gate, допуск/отказ, предыдущая версия"

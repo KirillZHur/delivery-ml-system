@@ -1,0 +1,12 @@
+{
+  "seed": 2026,
+  "target": "delivery_hours",
+  "selection_metric": "mae_hours",
+  "ridge_alpha": 1.0,
+  "hgb_learning_rate": 0.08,
+  "hgb_max_iter": 160,
+  "hgb_max_leaf_nodes": 15,
+  "hgb_min_samples_leaf": 35,
+  "hgb_l2_regularization": 1.0,
+  "prediction_range_hours": [1.0, 168.0]
+}

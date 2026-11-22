@@ -1,0 +1,177 @@
+{
+  "stage": "05_http_optimization",
+  "measurement": "localhost HTTP, separate Uvicorn worker per mode; 1 worker, persistent client",
+  "latency_scope": "client POST to parsed HTTP body; includes JSON, network loopback, PIT, predict, audit",
+  "handler_scope": "server handler start to completed audit; excludes HTTP serialization",
+  "percentile_method": "numpy percentile linear on per-request elapsed milliseconds",
+  "seed": 2026,
+  "dataset": "replay inputs only, no use of replay labels for optimization",
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "threads": 1,
+  "warmup_requests_per_mode": 20,
+  "model_artifact_bytes": 753,
+  "offline_quality_unchanged": {
+    "test_mae_hours": 2.397808819968492,
+    "test_orders": 3092,
+    "model_version": "delivery-2026.1-linear",
+    "max_http_parity_absolute_error": 1.4210854715202004e-14,
+    "equivalence_tolerance": 1e-12,
+    "result": "same frozen model and test MAE, equivalent fast path within tolerance"
+  },
+  "system": {
+    "platform": "macOS-26.7.3-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "httpx": "0.28.1"
+  },
+  "modes": {
+    "baseline": {
+      "warmup": {
+        "scheduled_rps": 20.0,
+        "completed_rps": 20.89928763181591,
+        "latency_ms": {
+          "count": 20,
+          "median_ms": 6.13264599815011,
+          "p95_ms": 8.001486843568278,
+          "p99_ms": 13.457463766098945,
+          "max_ms": 14.821457996731624
+        },
+        "server_handler_ms": {
+          "count": 20,
+          "median_ms": 2.009333999012597,
+          "p95_ms": 2.6641271011612844,
+          "p99_ms": 2.7211590214574244,
+          "max_ms": 2.7354170015314594
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 0.0
+      },
+      "steady": {
+        "scheduled_rps": 20.0,
+        "completed_rps": 20.071663855245156,
+        "latency_ms": {
+          "count": 240,
+          "median_ms": 6.47693699283991,
+          "p95_ms": 7.640097897819938,
+          "p99_ms": 8.11503713237471,
+          "max_ms": 9.513542012427934
+        },
+        "server_handler_ms": {
+          "count": 240,
+          "median_ms": 2.2223545020096935,
+          "p95_ms": 2.8324139435426323,
+          "p99_ms": 2.9848812453565188,
+          "max_ms": 3.002041994477622
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 7.105427357601002e-15
+      },
+      "burst": {
+        "scheduled_rps": 40.0,
+        "completed_rps": 40.340076099564214,
+        "latency_ms": {
+          "count": 80,
+          "median_ms": 6.616770995606203,
+          "p95_ms": 8.015356559917564,
+          "p99_ms": 8.346755440870766,
+          "max_ms": 8.361041007447056
+        },
+        "server_handler_ms": {
+          "count": 80,
+          "median_ms": 1.9736250033020042,
+          "p95_ms": 2.3304746966459784,
+          "p99_ms": 2.6737504408811215,
+          "max_ms": 2.705416001845151
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 3.552713678800501e-15
+      },
+      "rss_mb": {
+        "before": 176.90625,
+        "after": 177.25
+      },
+      "audited_responses": 340
+    },
+    "fast": {
+      "warmup": {
+        "scheduled_rps": 20.0,
+        "completed_rps": 20.902594952670356,
+        "latency_ms": {
+          "count": 20,
+          "median_ms": 5.509625007107388,
+          "p95_ms": 6.561071150645149,
+          "p99_ms": 7.080214227025862,
+          "max_ms": 7.2099999961210415
+        },
+        "server_handler_ms": {
+          "count": 20,
+          "median_ms": 0.3278545045759529,
+          "p95_ms": 0.3998002983280458,
+          "p99_ms": 0.4303264527698047,
+          "max_ms": 0.4379579913802445
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 7.105427357601002e-15
+      },
+      "steady": {
+        "scheduled_rps": 20.0,
+        "completed_rps": 20.074418237188965,
+        "latency_ms": {
+          "count": 240,
+          "median_ms": 5.036916998506058,
+          "p95_ms": 5.915253851708258,
+          "p99_ms": 8.995122246124026,
+          "max_ms": 57.637000005343
+        },
+        "server_handler_ms": {
+          "count": 240,
+          "median_ms": 0.30483349837595597,
+          "p95_ms": 0.3562024015991483,
+          "p99_ms": 0.40784348588203984,
+          "max_ms": 3.543416998581961
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 1.4210854715202004e-14
+      },
+      "burst": {
+        "scheduled_rps": 40.0,
+        "completed_rps": 40.41706792715994,
+        "latency_ms": {
+          "count": 80,
+          "median_ms": 3.4671454995987006,
+          "p95_ms": 5.246437498135492,
+          "p99_ms": 5.695321926323228,
+          "max_ms": 6.120999998529442
+        },
+        "server_handler_ms": {
+          "count": 80,
+          "median_ms": 0.23225050244946033,
+          "p95_ms": 0.35270624139229767,
+          "p99_ms": 0.3743654319259803,
+          "max_ms": 0.38154100184328854
+        },
+        "errors": 0,
+        "degraded": 0,
+        "max_prediction_abs_difference": 7.105427357601002e-15
+      },
+      "rss_mb": {
+        "before": 176.890625,
+        "after": 177.171875
+      },
+      "audited_responses": 340
+    }
+  },
+  "caveat": "Local CPU/loopback synthetic load; not a production network or p95 under peak conditions"
+}

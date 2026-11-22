@@ -1,0 +1,21 @@
+{
+  "model_version": "delivery-2026.1-linear",
+  "selected_model": "linear",
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "target": "delivery_hours",
+  "prediction_bounds_hours": [
+    1.0,
+    168.0
+  ],
+  "selection_metric": "mae_hours",
+  "model_sha256": "86a679478186b40a768510f85b5db401ae21e9b59551e478bce088776932409b",
+  "training_seed": 2026,
+  "train_as_of": "2026-02-01T00:00:00Z",
+  "valid_as_of": "2026-03-01T00:00:00Z",
+  "data_sha256": "128d47f690780fadc6efa691a364c4ebbfd86c8ef558e6f91fc5bc0a50aaad9c",
+  "config_sha256": "1c50eaee61b450a63fff42b3abc3e3604d47b16be78dd032f34cb4c0d8169449"
+}

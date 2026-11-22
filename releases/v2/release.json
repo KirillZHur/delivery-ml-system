@@ -1,0 +1,7 @@
+{
+  "inference_mode": "fast",
+  "manifest_sha256": "d44a559f529556bf569059085bc6379f5d9f27d8f2ba897f0b245653dd952c2c",
+  "model_sha256": "b2866ff6f1e16abda6aba5367eab4fd4fb3edccf8d627c590264c7a40b4828de",
+  "serving_sha256": "4672c52d10af58a63e490ff3be3e73054b5d700972227d85ca8490a2ca616467",
+  "version": "v2"
+}

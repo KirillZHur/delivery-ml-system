@@ -1,0 +1,102 @@
+{
+  "alerts": 6,
+  "clean_alerts": [],
+  "config_sha256": "05f1b1e8c3eb22af8549474ea5aba25c8ae6de14fc2ebbb0ac173a33049e25cb",
+  "daily_rows": 180,
+  "injected_alerts": [
+    {
+      "action": "degrade_and_investigate_feature_source",
+      "confirmation_days": 1,
+      "day": "2026-04-10",
+      "feature": "warehouse_load",
+      "observations": 145,
+      "reason": "missing_or_nonfinite",
+      "scenario": "injected_incident",
+      "type": "data_quality"
+    },
+    {
+      "action": "investigate_data_mix_and_wait_for_mature_labels",
+      "confirmation_days": 3,
+      "day": "2026-04-19",
+      "feature": "distance_km",
+      "observations": 144,
+      "reason": "corrected_p_and_effect_for_consecutive_days",
+      "scenario": "injected_incident",
+      "type": "drift"
+    }
+  ],
+  "limitations": [
+    "Injected changes alter monitored features without regenerating ground-truth delivery times; no claim about quality under injected incidents.",
+    "Quality is scored only on untouched replay predictions and fully ready daily cohorts.",
+    "Operational alerts read stage-6 synthetic windows, not real HTTP load measurements.",
+    "The generator is synthetic and has no weekly/holiday seasonality; thresholds require field calibration.",
+    "No online ground truth is available until the seven-day horizon and label-delivery delay close."
+  ],
+  "mature_quality": {
+    "delivered_label_coverage": 0.7625,
+    "immature_cohorts": 7,
+    "incomplete_cohorts": 2,
+    "mae_denominator": 2837,
+    "mae_numerator_hours": 6683.127248041143,
+    "mature_ready_orders": 2837,
+    "ready_cohorts": 21,
+    "ready_mae_hours": 2.355702237589405,
+    "snapshot_as_of": "2026-05-01T00:00:00+00:00",
+    "total_orders": 4000
+  },
+  "model_version": "delivery-2026.1-linear",
+  "operational_alerts": [
+    {
+      "action": "hold_release_and_restore_shared_features",
+      "controller_action_at_signal": "hold",
+      "controller_final_action": "complete",
+      "controller_final_state": "promoted",
+      "observations": 6000,
+      "scenario": "shared_outage",
+      "source": "synthetic_stage06_rollout_windows",
+      "type": "shared_feature_dependency",
+      "version": "both",
+      "window_id": 3
+    },
+    {
+      "action": "investigate_and_apply_rollout_controller_policy",
+      "controller_action_at_signal": "rollback",
+      "controller_final_action": "rollback",
+      "controller_final_state": "rolled_back",
+      "observations": 1519,
+      "scenario": "candidate_latency",
+      "source": "synthetic_stage06_rollout_windows",
+      "type": "latency_p95",
+      "version": "v2",
+      "window_id": 4
+    },
+    {
+      "action": "investigate_and_apply_rollout_controller_policy",
+      "controller_action_at_signal": "hold",
+      "controller_final_action": "rollback",
+      "controller_final_state": "rolled_back",
+      "observations": 1519,
+      "scenario": "candidate_errors",
+      "source": "synthetic_stage06_rollout_windows",
+      "type": "error_rate",
+      "version": "v2",
+      "window_id": 4
+    },
+    {
+      "action": "investigate_and_apply_rollout_controller_policy",
+      "controller_action_at_signal": "rollback",
+      "controller_final_action": "rollback",
+      "controller_final_state": "rolled_back",
+      "observations": 1519,
+      "scenario": "candidate_degraded",
+      "source": "synthetic_stage06_rollout_windows",
+      "type": "degraded_rate",
+      "version": "v2",
+      "window_id": 4
+    }
+  ],
+  "reference_orders": 12000,
+  "replay_orders": 4000,
+  "seed": 2026,
+  "stage": "07_monitoring"
+}

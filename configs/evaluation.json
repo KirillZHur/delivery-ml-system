@@ -1,0 +1,17 @@
+{
+  "seed": 2026,
+  "bootstrap_repeats": 1999,
+  "bootstrap_confidence": 0.95,
+  "resampling_unit": "utc_order_day",
+  "prediction_interval_coverage": 0.90,
+  "min_slice_orders": 80,
+  "mandatory_slices": [
+    {"name": "distance_ge_700km", "conditions": [{"feature": "distance_km", "op": "ge", "value": 700.0}]},
+    {"name": "rain_forecast_1", "conditions": [{"feature": "rain_forecast", "op": "eq", "value": 1}]},
+    {"name": "warehouse_load_ge_075", "conditions": [{"feature": "warehouse_load", "op": "ge", "value": 0.75}]},
+    {"name": "long_distance_and_rain", "conditions": [
+      {"feature": "distance_km", "op": "ge", "value": 700.0},
+      {"feature": "rain_forecast", "op": "eq", "value": 1}
+    ]}
+  ]
+}

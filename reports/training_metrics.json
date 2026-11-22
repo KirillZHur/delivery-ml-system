@@ -1,0 +1,96 @@
+{
+  "stage": "02_training_and_model_selection",
+  "selected_model": "linear",
+  "selection_metric": "mae_hours",
+  "train_orders_mature": 9259,
+  "valid_orders_mature": 2990,
+  "models": {
+    "median": {
+      "train": {
+        "n": 9259,
+        "mae_hours": 10.713598987524573,
+        "rmse_hours": 12.779356222303743,
+        "mean_signed_error_hours": -0.14572321442241548,
+        "underestimation_share": 0.4999459984879577,
+        "mean_underestimation_hours": 5.2839378865510795,
+        "p95_underestimation_hours": 20.282595921850817
+      },
+      "valid": {
+        "n": 2990,
+        "mae_hours": 11.065495362493923,
+        "rmse_hours": 13.188126025319924,
+        "mean_signed_error_hours": -0.06644095647186626,
+        "underestimation_share": 0.4956521739130435,
+        "mean_underestimation_hours": 5.499527203011029,
+        "p95_underestimation_hours": 21.308197302198945
+      }
+    },
+    "linear": {
+      "train": {
+        "n": 9259,
+        "mae_hours": 2.433736060384816,
+        "rmse_hours": 3.035774295043888,
+        "mean_signed_error_hours": 2.227016977185237e-15,
+        "underestimation_share": 0.5050221406199373,
+        "mean_underestimation_hours": 1.216868030192409,
+        "p95_underestimation_hours": 4.963435926787626
+      },
+      "valid": {
+        "n": 2990,
+        "mae_hours": 2.398167568174285,
+        "rmse_hours": 3.0090460411971027,
+        "mean_signed_error_hours": -0.03288150833199269,
+        "underestimation_share": 0.4956521739130435,
+        "mean_underestimation_hours": 1.1826430299211461,
+        "p95_underestimation_hours": 4.971230282295763
+      }
+    },
+    "hist_gradient_boosting": {
+      "train": {
+        "n": 9259,
+        "mae_hours": 2.347247976990004,
+        "rmse_hours": 2.9312628730386114,
+        "mean_signed_error_hours": 8.180029711174813e-06,
+        "underestimation_share": 0.5014580408251431,
+        "mean_underestimation_hours": 1.1736280785098574,
+        "p95_underestimation_hours": 4.763062106770526
+      },
+      "valid": {
+        "n": 2990,
+        "mae_hours": 2.458511309377941,
+        "rmse_hours": 3.0860881220002345,
+        "mean_signed_error_hours": -0.016635912501838712,
+        "underestimation_share": 0.49899665551839467,
+        "mean_underestimation_hours": 1.2209376984380511,
+        "p95_underestimation_hours": 5.042492140225909
+      }
+    }
+  },
+  "manifest": {
+    "model_version": "delivery-2026.1-linear",
+    "selected_model": "linear",
+    "feature_order": [
+      "distance_km",
+      "warehouse_load",
+      "rain_forecast"
+    ],
+    "target": "delivery_hours",
+    "prediction_bounds_hours": [
+      1.0,
+      168.0
+    ],
+    "selection_metric": "mae_hours",
+    "model_sha256": "b2866ff6f1e16abda6aba5367eab4fd4fb3edccf8d627c590264c7a40b4828de",
+    "training_seed": 2026,
+    "train_as_of": "2026-02-01T00:00:00Z",
+    "valid_as_of": "2026-03-01T00:00:00Z",
+    "data_sha256": "73cf7c7ce8d7ac53962de2d11099bc703d8539a3ff424bf225c0f98d8515c074",
+    "config_sha256": "1c50eaee61b450a63fff42b3abc3e3604d47b16be78dd032f34cb4c0d8169449"
+  },
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "joblib": "1.5.3"
+  }
+}

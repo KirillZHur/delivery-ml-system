@@ -1,0 +1,1 @@
+"""Synthetic delivery-order generator."""

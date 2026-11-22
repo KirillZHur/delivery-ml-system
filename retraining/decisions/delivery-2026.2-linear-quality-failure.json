@@ -1,0 +1,103 @@
+{
+  "active_version_after": "delivery-2026.2-linear",
+  "active_version_before": "delivery-2026.2-linear",
+  "boundaries": {
+    "calibration_end": "2026-04-26T00:00:00Z",
+    "gate_end": "2026-05-01T00:00:00Z",
+    "training_end": "2026-04-21T00:00:00Z"
+  },
+  "candidate_bundle": "candidates/delivery-2026.2-linear-quality-failure",
+  "candidate_version": "delivery-2026.2-linear-quality-failure",
+  "checks": {
+    "artifact_integrity": true,
+    "feature_contract": true,
+    "interval_coverage": true,
+    "interval_width": false,
+    "mae": false,
+    "online_offline_parity": true,
+    "service_latency": true,
+    "service_no_degraded": true,
+    "slice_distance_ge_700km": false,
+    "slice_long_distance_and_rain": false,
+    "slice_rain_forecast_1": false,
+    "slice_warehouse_load_ge_075": false
+  },
+  "counts": {
+    "calibration": 662,
+    "gate": 654,
+    "new_training": 2684,
+    "training": 18684
+  },
+  "model": {
+    "active": {
+      "mae_hours": 2.325990975957993,
+      "mean_signed_error_hours": 0.23076591171767957,
+      "mean_underestimation_hours": 1.2783784438378365,
+      "n": 654,
+      "p95_underestimation_hours": 5.110414907610486,
+      "rmse_hours": 2.963665380121917,
+      "underestimation_share": 0.5107033639143731
+    },
+    "calibration_half_width_hours": 12.827620041832425,
+    "candidate": {
+      "mae_hours": 8.773173202086145,
+      "mean_signed_error_hours": -8.769234088282321,
+      "mean_underestimation_hours": 0.001969556901912474,
+      "n": 654,
+      "p95_underestimation_hours": 0.0,
+      "rmse_hours": 9.253622321794582,
+      "underestimation_share": 0.0030581039755351682
+    },
+    "gate_intervals": {
+      "empirical_coverage": 0.9174311926605505,
+      "mean_width_hours": 25.655240083664857,
+      "median_width_hours": 25.65524008366485,
+      "n": 654
+    },
+    "slices": {
+      "distance_ge_700km": {
+        "active_mae_hours": 2.284299234370598,
+        "candidate_mae_hours": 8.584027505194834,
+        "n": 184,
+        "passed": false
+      },
+      "long_distance_and_rain": {
+        "active_mae_hours": 2.4119284453088983,
+        "candidate_mae_hours": 8.168553643772,
+        "n": 38,
+        "passed": false
+      },
+      "rain_forecast_1": {
+        "active_mae_hours": 2.352248474234984,
+        "candidate_mae_hours": 8.337127103866557,
+        "n": 116,
+        "passed": false
+      },
+      "warehouse_load_ge_075": {
+        "active_mae_hours": 2.127648185982235,
+        "candidate_mae_hours": 9.018518199268705,
+        "n": 126,
+        "passed": false
+      }
+    }
+  },
+  "outcome": "rejected",
+  "rejection_reasons": [
+    "mae",
+    "interval_width",
+    "slice_distance_ge_700km",
+    "slice_rain_forecast_1",
+    "slice_warehouse_load_ge_075",
+    "slice_long_distance_and_rain"
+  ],
+  "seed": 2026,
+  "service": {
+    "degraded": 0,
+    "max_online_offline_difference_hours": 1.4210854715202004e-14,
+    "measurement_scope": "local FastAPI TestClient request including response serialization; not a 20-rps external load test",
+    "p95_ms": 0.9495071999936043,
+    "requests": 32
+  },
+  "snapshot_as_of": "2026-05-10T00:00:00Z",
+  "stage": "08_retraining"
+}

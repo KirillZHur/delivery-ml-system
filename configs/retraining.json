@@ -1,0 +1,33 @@
+{
+  "seed": 2026,
+  "snapshot_as_of": "2026-05-10T00:00:00Z",
+  "new_period": "replay",
+  "training_end": "2026-04-21T00:00:00Z",
+  "calibration_end": "2026-04-26T00:00:00Z",
+  "gate_end": "2026-05-01T00:00:00Z",
+  "historical_training_periods": [
+    "train",
+    "valid"
+  ],
+  "candidate_version": "delivery-2026.2-linear",
+  "model_family": "linear",
+  "coverage": 0.9,
+  "min_new_training_orders": 1500,
+  "min_calibration_orders": 350,
+  "min_gate_orders": 350,
+  "min_slice_orders": 35,
+  "max_mae_regression_hours": 0.15,
+  "max_slice_mae_regression_hours": 0.55,
+  "min_interval_coverage": 0.85,
+  "max_mean_interval_width_hours": 13.0,
+  "max_service_p95_ms": 100.0,
+  "service_probe_requests": 32,
+  "bad_candidate_bias_hours": 9.0,
+  "operations": {
+    "cadence": "monthly, after 7-day cohort closure and one-hour label-delivery delay",
+    "trigger": "confirmed multi-day drift or mature MAE increase beyond operating tolerance",
+    "decision_owner_role": "ML engineer / on-call model owner",
+    "promotion_scope": "automatic in this local demonstration; real production requires owner's approval",
+    "rollback": "load previous checksum-verified registry bundle and restart the service"
+  }
+}

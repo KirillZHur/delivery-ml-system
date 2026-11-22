@@ -1,0 +1,102 @@
+{
+  "config_sha256": "3c925c3fb057e5e6d0da084d2dfb7274c1b6b1bc01dd9a5870d1c8996feb1b38",
+  "http_parity": {
+    "http_requests_per_version": 12,
+    "max_abs_prediction_error_hours": 1.4210854715202004e-14,
+    "model_quality_checked_on_test": false,
+    "ready_v1": true,
+    "ready_v2": true
+  },
+  "notes": [
+    "Operational latency, errors and degraded counts are synthetic, NOT HTTP load measurements.",
+    "Real FastAPI TestClient checks readiness and numerical parity of both versioned bundles.",
+    "Technical error rollback requires two consecutive windows with >=1000 candidate requests each.",
+    "Candidate canary traffic is sticky by user_id; stable uses shadow copies at 100% candidate traffic."
+  ],
+  "rollback_http": {
+    "healthy_model_response": true,
+    "model_version": "delivery-2026.1-linear-v1",
+    "new_actual_version": "v1",
+    "status": "verified"
+  },
+  "scenarios": [
+    {
+      "name": "healthy",
+      "recovery": null,
+      "share": 1.0,
+      "status": "promoted",
+      "windows": 7
+    },
+    {
+      "name": "shared_outage",
+      "recovery": null,
+      "share": 1.0,
+      "status": "promoted",
+      "windows": 9
+    },
+    {
+      "name": "candidate_latency",
+      "recovery": {
+        "inflight_admitted_at_ms": 299900,
+        "inflight_admitted_before_rollback_version": "v2",
+        "inflight_completed_after_rollback_version": "v2",
+        "inflight_completed_at_ms": 300050,
+        "new_assigned_version": "v1",
+        "new_request_id": "rollout-candidate_latency-005-000000",
+        "rollback_switch_at_ms": 300000,
+        "stable_ready": true,
+        "window_id": 5
+      },
+      "share": 0.0,
+      "status": "rolled_back",
+      "windows": 4
+    },
+    {
+      "name": "candidate_errors",
+      "recovery": {
+        "inflight_admitted_at_ms": 359900,
+        "inflight_admitted_before_rollback_version": "v2",
+        "inflight_completed_after_rollback_version": "v2",
+        "inflight_completed_at_ms": 360050,
+        "new_assigned_version": "v1",
+        "new_request_id": "rollout-candidate_errors-006-000000",
+        "rollback_switch_at_ms": 360000,
+        "stable_ready": true,
+        "window_id": 6
+      },
+      "share": 0.0,
+      "status": "rolled_back",
+      "windows": 5
+    },
+    {
+      "name": "candidate_degraded",
+      "recovery": {
+        "inflight_admitted_at_ms": 299900,
+        "inflight_admitted_before_rollback_version": "v2",
+        "inflight_completed_after_rollback_version": "v2",
+        "inflight_completed_at_ms": 300050,
+        "new_assigned_version": "v1",
+        "new_request_id": "rollout-candidate_degraded-005-000000",
+        "rollback_switch_at_ms": 300000,
+        "stable_ready": true,
+        "window_id": 5
+      },
+      "share": 0.0,
+      "status": "rolled_back",
+      "windows": 4
+    }
+  ],
+  "seed": 2026,
+  "small_window": {
+    "action": "hold",
+    "candidate_requests": 9,
+    "reasons": [
+      "insufficient_data"
+    ],
+    "share_after": 0.05,
+    "stable_requests": 91,
+    "status": "canary",
+    "window_size": 100
+  },
+  "stage": "06_shadow_canary_and_rollback"
+}

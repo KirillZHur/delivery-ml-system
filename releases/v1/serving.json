@@ -1,0 +1,17 @@
+{
+  "calibration_orders": 2990,
+  "calibration_source": "mature_validation_only",
+  "data_sha256": "73cf7c7ce8d7ac53962de2d11099bc703d8539a3ff424bf225c0f98d8515c074",
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "interval_coverage": 0.9,
+  "interval_half_width_hours": 5.016671417393098,
+  "limitations": "Validation was also used for model selection; formal split-conformal coverage is not claimed.",
+  "manifest_sha256": "ef5cfb20c4d91335c01c0adca623ae2fb4f5be1e8473d7e4072a48ace2d9ce79",
+  "model_sha256": "b2866ff6f1e16abda6aba5367eab4fd4fb3edccf8d627c590264c7a40b4828de",
+  "model_version": "delivery-2026.1-linear-v1",
+  "schema_version": 1
+}

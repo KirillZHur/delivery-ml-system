@@ -1,0 +1,21 @@
+{
+  "seed": 2026,
+  "periods": [
+    {"name": "train", "start": "2026-01-01T00:00:00Z", "end": "2026-02-01T00:00:00Z", "orders": 12000},
+    {"name": "valid", "start": "2026-02-01T00:00:00Z", "end": "2026-03-01T00:00:00Z", "orders": 4000},
+    {"name": "test", "start": "2026-03-01T00:00:00Z", "end": "2026-04-01T00:00:00Z", "orders": 4000},
+    {"name": "replay", "start": "2026-04-01T00:00:00Z", "end": "2026-05-01T00:00:00Z", "orders": 4000}
+  ],
+  "distance_max_km": 1000.0,
+  "warehouse_load_beta": [2.0, 2.0],
+  "rain_probability": 0.27,
+  "delivery_noise_std_hours": 3.0,
+  "warehouse_event_frequency_hours": 2,
+  "weather_event_frequency_hours": 6,
+  "late_event_probability": 0.07,
+  "event_delay_regular_max_minutes": 15,
+  "event_delay_late_min_minutes": 120,
+  "event_delay_late_max_minutes": 360,
+  "label_window_days": 7,
+  "label_delivery_delay_hours": 1
+}

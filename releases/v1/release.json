@@ -1,0 +1,7 @@
+{
+  "inference_mode": "baseline",
+  "manifest_sha256": "ef5cfb20c4d91335c01c0adca623ae2fb4f5be1e8473d7e4072a48ace2d9ce79",
+  "model_sha256": "b2866ff6f1e16abda6aba5367eab4fd4fb3edccf8d627c590264c7a40b4828de",
+  "serving_sha256": "0c5719c4333f844240c0e3fe78f36729a4dfdba7faa4cc234d788f70eaf0dd17",
+  "version": "v1"
+}

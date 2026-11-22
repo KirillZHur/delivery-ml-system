@@ -1,0 +1,22 @@
+{
+  "seed": 2026,
+  "window_requests": 6000,
+  "user_pool": 6000,
+  "shadow_windows": 1,
+  "canary_shares": [0.05, 0.25, 1.0],
+  "healthy_windows_per_step": 2,
+  "min_observations_per_version": 200,
+  "max_error_rate": 0.01,
+  "error_confirmation_windows": 2,
+  "error_confirmation_min_requests": 1000,
+  "max_p95_latency_ms": 100.0,
+  "max_degraded_rate": 0.05,
+  "healthy_error_probability": 0.002,
+  "healthy_degraded_probability": 0.001,
+  "stable_latency_ms": 41.0,
+  "candidate_latency_ms": 36.0,
+  "latency_jitter_ms": 3.0,
+  "failure_latency_ms": 150.0,
+  "failure_error_probability": 0.035,
+  "default_scenario_windows": 14
+}

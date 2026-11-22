@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "profile": "full",
+  "date_utc": "2026-11-22T11:14:34.747663+00:00",
+  "test_count": 136,
+  "steps": {
+    "data": "passed",
+    "training": "passed",
+    "offline_evaluation": "passed",
+    "serving_bundle": "passed",
+    "release_replay": "passed",
+    "monitoring": "passed",
+    "retraining": "passed",
+    "http_benchmark": "passed",
+    "tests": "passed"
+  },
+  "durations_seconds": {
+    "data": 0.886,
+    "training": 26.863,
+    "offline_evaluation": 0.913,
+    "serving_bundle": 0.88,
+    "release_replay": 1.508,
+    "monitoring": 1.122,
+    "retraining": 1.244,
+    "http_benchmark": 33.41,
+    "tests": 6.82,
+    "final_report": 0.892
+  },
+  "reports": [
+    "reports/report.md",
+    "reports/rubric.csv",
+    "reports/reproducibility.json",
+    "reports/performance.json",
+    "reports/latency_raw.csv"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "seed": 2026,
+  "reference_period": "train",
+  "monitored_period": "replay",
+  "snapshot_as_of": "2026-05-01T00:00:00Z",
+  "min_daily_requests": 80,
+  "minimum_std": {"warehouse_load": 0.05, "distance_km": 50.0},
+  "psi_bins": 10,
+  "bonferroni_alpha": 0.01,
+  "numeric_min_psi": 0.08,
+  "categorical_min_total_variation": 0.1,
+  "persistent_days": 3,
+  "incident": {
+    "feature_failure_days": [10, 11],
+    "distance_shift_from_day": 17,
+    "additional_distance_km": 300.0,
+    "late_label_day": 8,
+    "late_label_count": 7,
+    "late_label_extra_days": 35
+  }
+}

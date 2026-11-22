@@ -1,0 +1,16 @@
+{
+  "calibration_orders": 662,
+  "calibration_source": "mature_replay_calibration",
+  "data_sha256": "128d47f690780fadc6efa691a364c4ebbfd86c8ef558e6f91fc5bc0a50aaad9c",
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "interval_coverage": 0.9,
+  "interval_half_width_hours": 4.865351286788545,
+  "manifest_sha256": "24331aa676aa2f8097765a4447305083dfcf16404e58feeb23e2acc0c65c0bfc",
+  "model_sha256": "aa0badca6879d80c5e916cdf6522338f8d91ababc2da8c7298881d2f0ab2dbca",
+  "model_version": "delivery-2026.2-linear",
+  "schema_version": 1
+}

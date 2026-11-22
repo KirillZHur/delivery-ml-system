@@ -1,0 +1,25 @@
+{
+  "calibration_examples": 662,
+  "config_sha256": "1c50eaee61b450a63fff42b3abc3e3604d47b16be78dd032f34cb4c0d8169449",
+  "data_sha256": "73cf7c7ce8d7ac53962de2d11099bc703d8539a3ff424bf225c0f98d8515c074",
+  "feature_order": [
+    "distance_km",
+    "warehouse_load",
+    "rain_forecast"
+  ],
+  "model_sha256": "49e732146cdba822a014f74a8d6dba0818f03689bbd5cf9b3f99e14da11ffd93",
+  "model_version": "delivery-2026.2-linear-quality-failure",
+  "prediction_bounds_hours": [
+    1.0,
+    168.0
+  ],
+  "retrained_as_of": "2026-05-10T00:00:00Z",
+  "retraining_config_sha256": "0695bbebc9751901609416d03fea2f95b007ad063e50fc9d60edb7c9914d62bb",
+  "retraining_examples": 18684,
+  "selected_model": "linear",
+  "selection_metric": "mae_hours",
+  "target": "delivery_hours",
+  "train_as_of": "2026-02-01T00:00:00Z",
+  "training_seed": 2026,
+  "valid_as_of": "2026-03-01T00:00:00Z"
+}

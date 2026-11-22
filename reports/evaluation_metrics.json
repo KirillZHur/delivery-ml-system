@@ -1,0 +1,152 @@
+{
+  "stage": "03_offline_evaluation",
+  "evaluation_policy": {
+    "model_selected_on": "mature_validation_february_2026",
+    "calibration_residuals_from": "mature_validation_february_2026",
+    "final_holdout": "mature_test_march_2026",
+    "test_used_in_selection_or_calibration": false,
+    "interval_note": "Empirical validation residual interval; validation was also used for model selection, so distribution-free split-conformal guarantee is NOT claimed.",
+    "bootstrap_unit": "UTC calendar day (all orders and both predictions resampled together)",
+    "confidence_level": 0.95,
+    "bootstrap_repeats": 1999,
+    "seed": 2026
+  },
+  "model_version": "delivery-2026.1-linear",
+  "selected_model": "linear",
+  "split_counts": {
+    "train_mature": 9259,
+    "valid_mature": 2990,
+    "test_mature": 3092
+  },
+  "baseline_test": {
+    "n": 3092,
+    "mae_hours": 10.795747186097627,
+    "rmse_hours": 12.890403717246846,
+    "mean_signed_error_hours": 0.0310369144179466,
+    "underestimation_share": 0.4886804657179819,
+    "mean_underestimation_hours": 5.413392050257787,
+    "p95_underestimation_hours": 20.957827691973957
+  },
+  "candidate_test": {
+    "n": 3092,
+    "mae_hours": 2.397808819968492,
+    "rmse_hours": 2.998495118000192,
+    "mean_signed_error_hours": 0.022426961085176406,
+    "underestimation_share": 0.5090556274256145,
+    "mean_underestimation_hours": 1.2101178905268342,
+    "p95_underestimation_hours": 4.89838121320417
+  },
+  "paired_mae_improvement": {
+    "metric": "baseline_mae_minus_candidate_mae_hours",
+    "estimate_hours": 8.397938366129136,
+    "ci_lower_hours": 8.115754925609206,
+    "ci_upper_hours": 8.675557464171256,
+    "confidence": 0.95,
+    "resampling_unit": "utc_order_day",
+    "n_blocks": 24,
+    "n_orders": 3092,
+    "repeats": 1999,
+    "seed": 2026
+  },
+  "prediction_interval": {
+    "target_coverage": 0.9,
+    "calibration_residual_count": 2990,
+    "half_width_hours": 5.016671417393098,
+    "validation_diagnostic": {
+      "n": 2990,
+      "empirical_coverage": 0.9003344481605351,
+      "mean_width_hours": 10.033342834786197,
+      "median_width_hours": 10.033342834786197
+    },
+    "test": {
+      "n": 3092,
+      "empirical_coverage": 0.9052393272962483,
+      "mean_width_hours": 10.033342834786197,
+      "median_width_hours": 10.033342834786197
+    }
+  },
+  "mandatory_slices": [
+    {
+      "slice": "distance_ge_700km",
+      "mandatory": true,
+      "n_orders": 906,
+      "n_days": 24,
+      "status": "evaluated",
+      "baseline_mae_hours": 14.445010793197072,
+      "candidate_mae_hours": 2.4059206901065218,
+      "delta_mae_hours": 12.039090103090551,
+      "ci_lower_hours": 11.236245111689913,
+      "ci_upper_hours": 12.902767731719564,
+      "empirical_interval_coverage": 0.9061810154525386,
+      "mean_interval_width_hours": 10.033342834786197,
+      "candidate_mean_underestimation_hours": 1.1685801052122136
+    },
+    {
+      "slice": "rain_forecast_1",
+      "mandatory": true,
+      "n_orders": 827,
+      "n_days": 14,
+      "status": "evaluated",
+      "baseline_mae_hours": 11.043435705204725,
+      "candidate_mae_hours": 2.4134871077399334,
+      "delta_mae_hours": 8.62994859746479,
+      "ci_lower_hours": 7.94578463729851,
+      "ci_upper_hours": 9.23874878994424,
+      "empirical_interval_coverage": 0.905683192261185,
+      "mean_interval_width_hours": 10.033342834786197,
+      "candidate_mean_underestimation_hours": 1.2583728681026565
+    },
+    {
+      "slice": "warehouse_load_ge_075",
+      "mandatory": true,
+      "n_orders": 482,
+      "n_days": 20,
+      "status": "evaluated",
+      "baseline_mae_hours": 11.381377862581605,
+      "candidate_mae_hours": 2.386606992625436,
+      "delta_mae_hours": 8.99477086995617,
+      "ci_lower_hours": 8.316527326924078,
+      "ci_upper_hours": 9.728793076180349,
+      "empirical_interval_coverage": 0.9066390041493776,
+      "mean_interval_width_hours": 10.033342834786197,
+      "candidate_mean_underestimation_hours": 1.2707754617317413
+    },
+    {
+      "slice": "long_distance_and_rain",
+      "mandatory": true,
+      "n_orders": 233,
+      "n_days": 13,
+      "status": "evaluated",
+      "baseline_mae_hours": 19.255316309947183,
+      "candidate_mae_hours": 2.5166603348123355,
+      "delta_mae_hours": 16.738655975134847,
+      "ci_lower_hours": 15.69207548321717,
+      "ci_upper_hours": 17.984788229094228,
+      "empirical_interval_coverage": 0.8884120171673819,
+      "mean_interval_width_hours": 10.033342834786197,
+      "candidate_mean_underestimation_hours": 1.2384492886703908
+    }
+  ],
+  "split_readiness": {
+    "train": {
+      "total": 12000,
+      "mature": 9259,
+      "immature": 2741
+    },
+    "valid": {
+      "total": 4000,
+      "mature": 2990,
+      "immature": 1010
+    },
+    "test": {
+      "total": 4000,
+      "mature": 3092,
+      "immature": 908
+    }
+  },
+  "sha256": {
+    "features": "73cf7c7ce8d7ac53962de2d11099bc703d8539a3ff424bf225c0f98d8515c074",
+    "selected_model": "b2866ff6f1e16abda6aba5367eab4fd4fb3edccf8d627c590264c7a40b4828de",
+    "evaluation_config": "16568251dab65a6003a6896e9555bb4db0fda9758fbb2767fbc7a5d3167f70d6"
+  }
+}
